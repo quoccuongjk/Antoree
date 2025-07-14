@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 import { mockProducts, mockAISuggestions } from './api/MockData';
 
 function App() {
-  const [products, setProducts] = useState(mockProducts);
+  const [products] = useState(mockProducts);
   const [searchTerm, setSearchTerm] = useState('');
   const [priceFilter, setPriceFilter] = useState('');
   const [selectedProduct, setSelectedProduct] = useState(null);
