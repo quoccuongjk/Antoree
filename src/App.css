@@ -1,0 +1,211 @@
+.app-container {
+    min-height: 100vh;
+    background-color: #f7fafc;
+    font-family: sans-serif;
+    color: #2d3748;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    padding: 30px;
+    margin-top: 120px;
+    flex-grow: 1;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 16px;
+}
+
+.ai-suggestions,
+.product-list,
+.view-history,
+.favorites {
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 24px;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ai-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ai-button {
+    background-color: #805ad5;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.ai-button:hover:not(:disabled) {
+    background-color: #6b46c1;
+    transform: translateY(-1px);
+}
+
+.ai-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.toggle-ai-suggestions-button {
+    background-color: #e2e8f0;
+    color: #4a5568;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.toggle-ai-suggestions-button:hover {
+    background-color: #cbd5e0;
+}
+
+.loading-icon {
+    animation: spin 1s linear infinite;
+    height: 20px;
+    width: 20px;
+    margin-right: 12px;
+    stroke: white;
+}
+
+.loading-circle {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.4);
+    stroke-width: 4;
+}
+
+.loading-path {
+    fill: white;
+}
+
+.loading-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.loading-card {
+    background-color: #e2e8f0;
+    border-radius: 1rem;
+    height: 320px;
+    animation: pulse 1.5s infinite ease-in-out;
+    background: linear-gradient(90deg, #e2e8f0 25%, #cbd5e0 50%, #e2e8f0 75%);
+    background-size: 200% 100%;
+}
+
+@keyframes pulse {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.product-section-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    /* Không dùng justify-content: center; để các sản phẩm căn trái */
+}
+
+.no-products-message {
+    text-align: center;
+    color: #4a5568;
+    font-size: 1.125rem;
+    padding: 20px;
+}
+
+.footer {
+    background-color: #2d3748;
+    color: white;
+    padding: 24px;
+    text-align: center;
+    margin-top: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+    }
+
+    .ai-button,
+    .toggle-ai-suggestions-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ai-controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .product-section-content {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .loading-grid {
+        grid-template-columns: 1fr;
+    }
+}

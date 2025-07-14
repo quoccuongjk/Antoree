@@ -1,0 +1,40 @@
+.footer {
+  background-color: #333;
+  color: #f0f0f0;
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 1rem;
+  border-top: 1px solid #444;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.footer .personal-info {
+  margin-top: 1.5rem;
+  border-top: 1px dashed #555;
+  padding-top: 1.5rem;
+}
+
+.footer .personal-info p {
+  margin-bottom: 0.5rem;
+}
+
+.footer .personal-info a {
+  color: #61dafb;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer .personal-info a:hover {
+  color: #21a1f1;
+  text-decoration: underline;
+}
